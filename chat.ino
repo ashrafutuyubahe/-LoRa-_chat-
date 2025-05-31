@@ -6,7 +6,7 @@
 #define RFM95_RST 4
 #define RFM95_INT 7
 
-// LoRa frequency (make sure both sides match)
+// LoRa frequency
 #define RF95_FREQ 952.2
 
 // Radio driver instance
@@ -36,7 +36,7 @@ void setup() {
   }
   Serial.println("LoRa radio init OK!");
 
-  // Set frequency
+  // Seting up the frequency
   if (!rf95.setFrequency(RF95_FREQ)) {
     Serial.println("setFrequency failed");
     while (1);
@@ -44,7 +44,7 @@ void setup() {
   Serial.print("Set Freq to: ");
   Serial.println(RF95_FREQ);
 
-  // Set TX power (max is 23 for RH_RF95)
+  // Set TX power 
   rf95.setTxPower(23, false);
 }
 
@@ -54,16 +54,16 @@ void loop() {
     uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
     uint8_t len = sizeof(buf);
     if (rf95.recv(buf, &len)) {
-      buf[len] = '\0'; // Ensure it's null-terminated
+      buf[len] = '\0'; 
       String mString = String((char*)buf);
 
       if (mString.indexOf("ON") >= 0) {
-        digitalWrite(12, LOW); //Turn ON
+        digitalWrite(12, LOW); //turning ON
         delay(100);
       }
 
       if (mString.indexOf("OFF") >= 0) {
-        digitalWrite(12, HIGH); //Turn 
+        digitalWrite(12, HIGH); //turnigng on 
         delay(100);
       }
 
@@ -77,10 +77,10 @@ void loop() {
     }
   }
 
-  // Transmit logic (from serial input)
+  // Transmit logic 
   if (Serial.available()) {
     String input = Serial.readStringUntil('\n');
-    input.trim();  // Remove any whitespace or newline
+    input.trim(); 
 
     if (input.length() > 0) {
       Serial.print("Sent: ");
