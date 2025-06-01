@@ -1,5 +1,5 @@
-#include <SPI.h>
 #include <RH_RF95.h>
+#include <SPI.h>
 
 // Pin definitions
 #define RFM95_CS 8
@@ -32,19 +32,21 @@ void setup() {
 
   if (!rf95.init()) {
     Serial.println("LoRa radio init failed");
-    while (1);
+    while (1)
+      ;
   }
   Serial.println("LoRa radio init OK!");
 
   // Seting up the frequency
   if (!rf95.setFrequency(RF95_FREQ)) {
     Serial.println("setFrequency failed");
-    while (1);
+    while (1)
+      ;
   }
   Serial.print("Set Freq to: ");
   Serial.println(RF95_FREQ);
 
-  // Set TX power 
+  // Set TX power
   rf95.setTxPower(23, false);
 }
 
@@ -54,16 +56,16 @@ void loop() {
     uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
     uint8_t len = sizeof(buf);
     if (rf95.recv(buf, &len)) {
-      buf[len] = '\0'; 
-      String mString = String((char*)buf);
+      buf[len] = '\0';
+      String mString = String((char *)buf);
 
       if (mString.indexOf("ON") >= 0) {
-        digitalWrite(12, LOW); //turn ON
+        digitalWrite(12, LOW); // turn ON
         delay(100);
       }
 
       if (mString.indexOf("OFF") >= 0) {
-        digitalWrite(12, HIGH); //turn OFF
+        digitalWrite(12, HIGH); // turn OFF
         delay(100);
       }
 
@@ -77,10 +79,10 @@ void loop() {
     }
   }
 
-  // Transmit logic 
+  // Transmit logic .
   if (Serial.available()) {
     String input = Serial.readStringUntil('\n');
-    input.trim(); 
+    input.trim();
 
     if (input.length() > 0) {
       Serial.print("Sent: ");
