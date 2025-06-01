@@ -74,4 +74,4 @@ You can install it from Arduino Library Manager:
 This project uses **952.2 MHz** as the LoRa frequency:
 
 ```cpp
-#define RF95_FREQ 952.2
+#define RF95_FREQ 952.2 
