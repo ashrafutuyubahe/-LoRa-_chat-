@@ -15,7 +15,7 @@ RH_RF95 rf95(RFM95_CS, RFM95_INT);
 void setup() {
   pinMode(RFM95_RST, OUTPUT);
   digitalWrite(RFM95_RST, HIGH);
-  pinMode(12, OUTPUT); // Output pin for ON/OFF control
+  pinMode(12, OUTPUT); // Output pin for ON/OFF controls
   Serial.begin(115200);
   while (!Serial) {
     delay(1);
