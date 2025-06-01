@@ -48,7 +48,7 @@ You can install it from Arduino Library Manager:
 2. Search for **RadioHead**
 3. Click **Install**
 
-## 🚀 Getting Started
+## 🚀 How to Get Started
 
 ### Uploading the Code
 
