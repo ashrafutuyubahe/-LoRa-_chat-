@@ -2,7 +2,7 @@
 
 📡 **LoRa-chat** is a simple Arduino-based two-way chat system that uses LoRa (Long Range) radios for communication. It allows users to send and receive messages wirelessly using LoRa modules without requiring Wi-Fi or cellular network.
 
-## 🔧 Features
+## Features
 
 - LoRa-based wireless communication using the RH_RF95 driver.
 - Bi-directional chat via the Serial Monitor.
@@ -10,7 +10,7 @@
 - RSSI (Received Signal Strength Indicator) logging.
 - Lightweight and easy to set up on Arduino-compatible boards.
 
-## 🧰 Hardware Requirements
+##  Hardware Requirements
 
 To run this project, you'll need:
 
@@ -20,7 +20,7 @@ To run this project, you'll need:
 - Breadboard (optional)
 - USB cables
 
-### 🛠 Pin Connections
+###  Pin Connections
 
 | RFM95 Pin | Arduino Pin |
 |----------:|-------------|
@@ -35,12 +35,12 @@ To run this project, you'll need:
 
 > ⚠️ Ensure you're powering the RFM95 module with **3.3V**, not 5V, or you may damage the module.
 
-## 💻 Software Requirements
+##  Software Requirements
 
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [RadioHead Library](http://www.airspayce.com/mikem/arduino/RadioHead/)
 
-### 🔌 Install RadioHead Library
+###  Install RadioHead Library
 
 You can install it from Arduino Library Manager:
 
@@ -48,7 +48,7 @@ You can install it from Arduino Library Manager:
 2. Search for **RadioHead**
 3. Click **Install**
 
-## 🚀 How to Get Started
+##  How to Get Started
 
 ### Uploading the Code
 
@@ -69,7 +69,7 @@ You can install it from Arduino Library Manager:
 
 > This is useful for controlling devices such as LEDs or relays connected to pin 12.
 
-## 📡 Frequency Setting
+##  Frequency Setting
 
 This project uses **952.2 MHz** as the LoRa frequency:
 
