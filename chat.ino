@@ -9,7 +9,7 @@
 // LoRa frequency
 #define RF95_FREQ 952.2
 
-// Radio driver instance
+// for Radio driver
 RH_RF95 rf95(RFM95_CS, RFM95_INT);
 
 void setup() {
@@ -58,12 +58,12 @@ void loop() {
       String mString = String((char*)buf);
 
       if (mString.indexOf("ON") >= 0) {
-        digitalWrite(12, LOW); //turning ON
+        digitalWrite(12, LOW); //turn ON
         delay(100);
       }
 
       if (mString.indexOf("OFF") >= 0) {
-        digitalWrite(12, HIGH); //turnigng on 
+        digitalWrite(12, HIGH); //turn OFF
         delay(100);
       }
 
